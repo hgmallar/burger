@@ -1,0 +1,46 @@
+<img class="mt-5 mx-auto d-block rounded" src="assets/img/chicken_burger.png">
+<h1 class="mt-2 fancy-font text-center">Eat-Da-Burger!</h1>
+
+
+
+<div id="burger-list-area">
+    <div class="row mx-auto">
+        <div class="col-md-5 mx-auto" id="not-eaten">
+            <ul>
+                {{#each burgers}}
+                {{#unless devoured}}
+                <div class="row">
+                    <div class="col-md-7">
+                        <li class="bg-primary text-white p-3 rounded my-2 text-left d-block">{{id}}. {{burger_name}}</li>
+                    </div>
+                    <div class="col-md-3 my-auto">
+                        <button data-id="{{id}}" class="btn btn-secondary p-2 ml-2 devour-btn">Devour it!</button>
+                    </div>
+                </div>
+                {{/unless}}
+                {{/each}}
+            </ul>
+        </div>
+        <div class="col-md-5 mx-auto" id="eaten">
+            <ul>
+                {{#each burgers}}
+                {{#if devoured}}
+                <div class="col-md-7">
+                    <li class="bg-primary text-white p-3 rounded my-2 d-block text-left">{{id}}. {{burger_name}}</li>
+                </div>
+                {{/if}}
+                {{/each}}
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-4 mx-auto">
+        <form class="create-form">
+            <textarea class="form-control mt-2" id="burg" rows="3"></textarea>
+            <button type="submit" class="btn btn-primary mt-2 mx-auto d-block">Submit</button>
+            <p class="text-center mt-2">Enter a burger you want to eat. Click the "Submit" button.</p>
+        </form>
+    </div>
+</div>
