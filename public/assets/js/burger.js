@@ -1,8 +1,11 @@
 // Make sure we wait to attach our handlers until the DOM is fully loaded.
 $(function () {
+    //When a devour it button is clicked
     $(".devour-btn").on("click", function (event) {
+        //Get the id from the data-id attribute
         var id = $(this).data("id");
         
+        //changed the devoured state to true
         var newDevouredState = {
             devoured: true
         };
@@ -20,10 +23,12 @@ $(function () {
         );
     });
 
+    //When the submit button is clicked
     $(".create-form").on("submit", function (event) {
         // Make sure to preventDefault on a submit event.
         event.preventDefault();
 
+        //get the new burger name
         var newBurger = {
             burger_name: $("#burg").val().trim(),
         };
